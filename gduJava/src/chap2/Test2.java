@@ -19,12 +19,14 @@ public class Test2 {
 		float f = (float)3 / 2;
 		long l= 3000L * 3000* 3000;
 		float f2 = 0.1f;
-		double d = 0.1f;
-		boolean result = d==f2;
+		double d = 0.1;
+		boolean result = (float)d==f2;
 		System.out.println("c="+c);
 		System.out.println("ch="+ch);
 		System.out.println("f="+f);
 		System.out.println("l="+l);
 		System.out.println("result="+result); //자바버그.
+		System.out.printf("%.20f\n",f2);
+		System.out.printf("%.20f\n",d);
 	}
 }
