@@ -13,15 +13,20 @@ public class Test1 {
 		System.out.print("문자를 입력 : ");
 		Scanner sc = new Scanner(System.in);
 		char ch = sc.next().charAt(0);
-		if (ch >= 'a' && ch <= 'z')
+		if (ch >= 'a' && ch <= 'z') {
 			ch -= 32;
-		else if (ch >= 'A' && ch <= 'Z')
-			ch += 32;
-		else {
-			System.out.println("기타문자"); return;
+			System.out.println("결과 : "+ch);
 		}
-	
-		System.out.println("결과 : "+ch);
+		else if (ch >= 'A' && ch <= 'Z') {
+			ch += 32;
+			System.out.println("결과 : "+ch);
+		}
+		else if (ch>='0' && ch<='9') {
+			ch -=48 ;
+			System.out.println("결과 : " + ((int)ch+20));
+		}
+		else 
+			System.out.println("기타문자");
 	}		
 
 }

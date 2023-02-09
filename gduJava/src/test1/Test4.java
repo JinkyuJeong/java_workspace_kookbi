@@ -25,5 +25,7 @@ public class Test4 {
 			System.out.println(y+"년은 "+"윤년");
 		}else if (y%4==0 && y%100==0 )
 			System.out.println(y+"년은 "+"평년");
+		else
+			System.out.println("아무것도 아님");
 	}
 }
