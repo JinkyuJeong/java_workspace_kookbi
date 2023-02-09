@@ -16,34 +16,83 @@ package test2;
 public class Test1 {
 
 	public static void main(String[] args) {
-		int i,j;
-		for(i=2; i<=5;i++) {
-			System.out.printf("%d단\t",i);
-		}
+		int i,j,k;
 		
-		System.out.println();
-		
-		for(i=2; i<=9 ;i++) {
-			for( j=2; j<=5; j++) {
-				System.out.printf("%d*%d=%d\t", j, i, i*j);
+		for(i=0; i<=1; i++) {
+			if(i==0) 
+			{
+				for(j=2; j<=5;j++) {
+					System.out.printf("%d단\t",j);
+				}
+				System.out.println();
+				for(k=2; k<=9 ;k++) {
+					for( j=2; j<=5; j++) {
+						System.out.printf("%d*%d=%d\t", j, k, k*j);
+					}
+					System.out.println();
+				}
 			}
-			System.out.println();
-		}
-		
-		System.out.println();
-		
-		for(i=6; i<=9;i++) {
-			System.out.printf("%d단\t",i);
-		}
-		
-		System.out.println();
-		
-		for(i=2; i<=9 ;i++) {
-			for( j=6; j<=9; j++) {
-				System.out.printf("%d*%d=%d\t", j, i, i*j);
+			else 
+			{
+				for(j=6; j<=9;j++) {
+					System.out.printf("%d단\t",j);
+				}
+				
+				System.out.println();
+				
+				for(j=2; j<=9 ;j++) {
+					for( k=6; k<=9; k++) {
+						System.out.printf("%d*%d=%d\t", j, k, k*j);
+					}
+					System.out.println();
+				}
 			}
-			System.out.println();
+			
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int i,j;
+//		for(i=2; i<=5;i++) {
+//			System.out.printf("%d단\t",i);
+//		}
+//		
+//		System.out.println();
+//		
+//		for(i=2; i<=9 ;i++) {
+//			for( j=2; j<=5; j++) {
+//				System.out.printf("%d*%d=%d\t", j, i, i*j);
+//			}
+//			System.out.println();
+//		}
+//		
+//		System.out.println();
+//		
+//		for(i=6; i<=9;i++) {
+//			System.out.printf("%d단\t",i);
+//		}
+//		
+//		System.out.println();
+//		
+//		for(i=2; i<=9 ;i++) {
+//			for( j=6; j<=9; j++) {
+//				System.out.printf("%d*%d=%d\t", j, i, i*j);
+//			}
+//			System.out.println();
+//		}
 		
 	}
 }
