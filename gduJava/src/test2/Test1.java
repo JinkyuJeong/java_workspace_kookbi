@@ -25,9 +25,9 @@ public class Test1 {
 					System.out.printf("%d단\t",j);
 				}
 				System.out.println();
-				for(k=2; k<=9 ;k++) {
-					for( j=2; j<=5; j++) {
-						System.out.printf("%d*%d=%d\t", j, k, k*j);
+				for(j=2; j<=9 ;j++) {
+					for( k=2; k<=5; k++) {
+						System.out.printf("%d*%d=%d\t", k, j, k*j);
 					}
 					System.out.println();
 				}
@@ -42,7 +42,7 @@ public class Test1 {
 				
 				for(j=2; j<=9 ;j++) {
 					for( k=6; k<=9; k++) {
-						System.out.printf("%d*%d=%d\t", j, k, k*j);
+						System.out.printf("%d*%d=%d\t", k, j, k*j);
 					}
 					System.out.println();
 				}
