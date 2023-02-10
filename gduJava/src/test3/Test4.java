@@ -18,6 +18,7 @@ public class Test4 {
 		}
 
 		//		Arrays.sort(nums);  <= 이거쓰면 정렬 개빠른데...
+		//		Arrays.toString(nums); 
 
 		System.out.print("정렬 전 : ");
 		for(int a : nums)
