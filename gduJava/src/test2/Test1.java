@@ -49,50 +49,6 @@ public class Test1 {
 			}
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		int i,j;
-//		for(i=2; i<=5;i++) {
-//			System.out.printf("%d단\t",i);
-//		}
-//		
-//		System.out.println();
-//		
-//		for(i=2; i<=9 ;i++) {
-//			for( j=2; j<=5; j++) {
-//				System.out.printf("%d*%d=%d\t", j, i, i*j);
-//			}
-//			System.out.println();
-//		}
-//		
-//		System.out.println();
-//		
-//		for(i=6; i<=9;i++) {
-//			System.out.printf("%d단\t",i);
-//		}
-//		
-//		System.out.println();
-//		
-//		for(i=2; i<=9 ;i++) {
-//			for( j=6; j<=9; j++) {
-//				System.out.printf("%d*%d=%d\t", j, i, i*j);
-//			}
-//			System.out.println();
-//		}
-		
+	
 	}
 }

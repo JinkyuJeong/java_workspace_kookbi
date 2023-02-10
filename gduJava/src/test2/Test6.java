@@ -17,7 +17,6 @@ public class Test6 {
 		System.out.print("삼각형의 높이를 홀수로 입력하세요 : ");
 		int h = sc.nextInt();
 		int m = h/2;
-//		int i,j;
 
 		for(int i=1;i<=m+1;i++) {
 			for(int j=1; j<i;j++) 
