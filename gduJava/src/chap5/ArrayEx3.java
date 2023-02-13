@@ -45,9 +45,6 @@ public class ArrayEx3 {
 					lotto[j] = tmp; 
 				}
 			}
-			System.out.print(i + " : ");
-			for(int b : lotto)System.out.print(b+", ");
-			System.out.println();
 		}
 		
 		for(int b : lotto)
