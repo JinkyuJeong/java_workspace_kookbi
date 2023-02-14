@@ -32,26 +32,15 @@ public class Test1 {
 				{70,75,80}
 		};
 		int[][] result = new int[score.length+1][score[0].length+1];
-		int wSum=0, wTotalSum=0;
-		int[] hSum = new int[score[0].length];
 		
-		for(int i=0; i<result.length;i++) {
-			for(int j=0; j<result[i].length;j++) {
-				if(j!=result[i].length-1 && i!=result.length-1) {
-					result[i][j]=score[i][j];
-					wSum+=score[i][j];
-					hSum[j]+=score[i][j];
-				}else {
-					result[i][j]=wSum;
-					wTotalSum+=wSum;
-				}
-				
-				if(i==result.length-1 && j!=result[i].length-1) 
-					result[i][j]=hSum[j];
-				else if(i==result.length-1 && j==result[i].length-1)
-					result[i][j]=wTotalSum;
+		for(int i=0;i <score.length;i++) {
+			for(int j=0;j<score[i].length;j++) {
+				result[i][j]= score[i][j];
+				result[i][score[i].length] +=score[i][j];
+				result[score.length][j] +=score[i][j];
+				result[score.length][score[i].length] +=score[i][j];
+ 				
 			}
-			wSum=0;
 		}
 		
 		for(int i=0; i<result.length;i++) {
