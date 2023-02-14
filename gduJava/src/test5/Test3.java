@@ -11,14 +11,15 @@ class Coin{
 	int side;
 	void flip() {
 		side = (int)(Math.random()*2);
+		System.out.println(side==0?"앞면":"뒷면");
 	}
 }
 public class Test3 {
 
 	public static void main(String[] args) {
 		Coin coin = new Coin();
-		coin.flip();
 		System.out.println(coin.side==0?"앞면":"뒷면");
+		coin.flip();
 	}
 
 }
