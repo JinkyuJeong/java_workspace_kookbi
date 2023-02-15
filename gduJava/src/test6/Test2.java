@@ -25,15 +25,6 @@ package test6;
 전체 뒷면 동전의 갯수 :7
  */
 class Coin {
-	  /*Coin 클래스
-	   멤버변수 : int side (앞면:0, 뒷면:1), serialNo(동전번호), 
-	            sno(동전번호 생성을위한 클래스변수)
-	   멤버메서드 : void flip()
-	                Math.random() 메서드를 사용하여 side를 결정.
-	  구동클래스
-	    Coin 클래스의 객체를 10개 생성하기.
-	    객체생성시, 동전번호를 입력하고, flip() 메서드를 이용하여 각각의 동전이 앞면인지 뒷면인지
-	    여부를 출력하기*/
 	int side, seriaNo;
 	static int sno;
 	public void filp() {
