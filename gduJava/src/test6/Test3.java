@@ -1,7 +1,5 @@
 package test6;
 
-import java.lang.ProcessHandle.Info;
-
 /*
 구동 클래스를 실행 했을때 다음의 결과가 나오도록 Animal2 클래스를 구현하기
 [결과]

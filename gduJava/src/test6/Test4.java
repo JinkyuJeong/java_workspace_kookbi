@@ -14,7 +14,7 @@ package test6;
  *     (5) String toString() :
  *         1번원 : 반지름:10, 좌표:(10,10), 넓이:314.xxx, 둘레:xxx.xxx
  *         ... */
-class Circle{
+class Circle {
 	int r, x, y,no;
 	static int count;
 
@@ -32,10 +32,10 @@ class Circle{
 	}
 
 	public double area() {
-		return (double)((int)(r*r*Math.PI*1000))/1000;
+		return (double)Math.round(r*r*Math.PI*1000)/1000;
 	}
 	public double length() {
-		return (double)((int)(2*r*Math.PI*1000))/1000;
+		return (double)Math.round(2*r*Math.PI*1000)/1000;
 	}
 	public void move(int a, int b) {
 		x+=a; y+=b;

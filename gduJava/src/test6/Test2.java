@@ -35,10 +35,10 @@ public class Test2 {
 	public static void main(String[] args) {
 		Coin[] coins = new Coin[10];
 		int front=0, back=0;
-		for(int i=0; i<10;i++) {
-			coins[i] = new Coin();
-			Coin.sno+=1;
-			coins[i].filp();
+		for(int i=0; i<10;i++) {				
+			coins[i] = new Coin();	
+			Coin.sno+=1;					
+			coins[i].filp();					
 			System.out.println(Coin.sno+"번 동전 : " + (coins[i].side==1 ? "앞면" : "뒷면"));
 			if(coins[i].side==1) front++; 
 			else back++;
