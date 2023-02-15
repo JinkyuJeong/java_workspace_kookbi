@@ -37,8 +37,10 @@ public class Test2 {
 		int front=0, back=0;
 		for(int i=0; i<10;i++) {				
 			coins[i] = new Coin();	
-			Coin.sno+=1;					
+			coins[i].seriaNo=++Coin.sno;					
 			coins[i].filp();					
+		}
+		for(int i=0 ;i<Coin.sno;i++) {
 			System.out.println(Coin.sno+"번 동전 : " + (coins[i].side==1 ? "앞면" : "뒷면"));
 			if(coins[i].side==1) front++; 
 			else back++;
