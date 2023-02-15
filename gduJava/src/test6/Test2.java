@@ -41,8 +41,8 @@ public class Test2 {
 			coins[i].filp();					
 		}
 		for(int i=0 ;i<Coin.sno;i++) {
-			System.out.println(coins[i].seriaNo+"번 동전 : " + (coins[i].side==1 ? "앞면" : "뒷면"));
-			if(coins[i].side==1) front++; 
+			System.out.println(coins[i].seriaNo+"번 동전 : " + (coins[i].side==0 ? "앞면" : "뒷면"));
+			if(coins[i].side==0) front++; 
 			else back++;
 		}
 		System.out.println("전체 앞면 동전의 갯수 : "+front );
