@@ -19,7 +19,6 @@ class Card {
 }
 
 public class Test1 {
-
 	public static void main(String[] args) {
 		Card c1 = new Card();
 		c1.kind = "Heart"; c1.number = 1;
@@ -32,5 +31,4 @@ public class Test1 {
 		System.out.println(c2);
 		
 	}
-
 }
