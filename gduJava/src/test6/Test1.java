@@ -36,7 +36,7 @@ class Student {
 		this.math = math;
 	}
 	public void info() {
-		System.out.printf("학번:%d\n이름:%s\n국어:%d\n영어:%d\n수학:%d\n총점:%d\n평균:%.1f\n\n",
+		System.out.printf("학번:%d\n이름:%s\n국어:%d\n영어:%d\n수학:%d\n총점:%d\n평균:%.1f\n=====================\n",
 									studNo, name, kor, eng, math,(kor+eng+math),(float)(kor+eng+math)/3);
 	}
 }
