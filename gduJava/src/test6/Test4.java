@@ -22,13 +22,11 @@ class Circle {
 		this.r =r; this.x =x; this.y =y;
 		this.no = ++count;
 	}
-	public Circle(int r, int x) {
-		this.r =r; this.x =x;
-		this.no = ++count;
+	public Circle(int x, int y) {
+		this(1,x,y);
 	}
 	public Circle(int r) {
-		this.r =r;
-		this.no = ++count;
+		this(r,1,1);
 	}
 
 	public double area() {
