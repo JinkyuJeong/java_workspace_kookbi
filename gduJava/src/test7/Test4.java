@@ -12,7 +12,6 @@ package test7;
   1K,2,3K,4,5,6,7,8K,9,10,1,2,3,4,5,6,7,8,9,10,
  */
 public class Test4 {
-
 	public static void main(String[] args) {
 		SutdaDeck deck = new SutdaDeck();
 		System.out.println(deck);
@@ -43,7 +42,6 @@ class SutdaDeck{
 				cards[i] = new SutdaCard((i%10+1), i==0 || i==2 || i==7 ? true : false ); 
 		}
 	}
-		
 	@Override
 	public String toString() {
 		String printCards ="";
