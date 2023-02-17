@@ -124,8 +124,6 @@ class Buyer {
 		int cntSnack=0, priceSnack=0;
 		String snackName="";
 		for(Food f : cart) {
-			if(f==null) continue;
-			
 			if(f instanceof Fruit) {
 				Fruit fr = (Fruit)f;
 				totPrice+=fr.price; totName+=fr+", ";
