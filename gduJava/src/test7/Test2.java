@@ -45,12 +45,12 @@ public class Test2 {
 }
 
 abstract class Employee {
-	static int type;
+	String type;
 	String name;
 	String address;
 	String dept;
 
-	public Employee(int type, String name, String address, String dept) {
+	public Employee(String type, String name, String address, String dept) {
 		this.type = type;
 		this.name = name;
 		this.address = address;
@@ -58,6 +58,11 @@ abstract class Employee {
 	}
 	// 추상메서드
 	abstract int getPay();
+	
+	@Override
+	public String toString() {
+		return this.type+":이름="+this.name+", 주소="+this.address+", 부서="+this.dept;
+	}
 }
 
 class FormalEmployee extends Employee{
@@ -66,7 +71,7 @@ class FormalEmployee extends Employee{
 	int salary;
 
 	public FormalEmployee(String name, String address, String dept, String empno, int salary, String position) {
-		super(0, name, address, dept);
+		super("정규직", name, address, dept);
 		this.empno = empno;
 		this.salary = salary;
 		this.position = position;
@@ -77,8 +82,7 @@ class FormalEmployee extends Employee{
 	}
 	@Override
 	public String toString() {
-		return (type==0 ? "정규직":"비정규직")+":이름="+super.name+", 주소="+super.address+", 부서="+super.dept
-				+ ", 직원번호="+this.empno+", 직급="+this.position+", 연봉="+this.salary;
+		return  super.toString()+", 직원번호="+this.empno+", 직급="+this.position+", 연봉="+this.salary;
 	}
 }
 
@@ -87,14 +91,13 @@ class InformalEmployee extends Employee{
 	int primaryPay;
 
 	public InformalEmployee(String name, String address, String dept, Date d, int primaryPay) {
-		super(1, name, address, dept);
+		super("비정규직", name, address, dept);
 		this.expireDate = d;
 		this.primaryPay = primaryPay;
 	}
 	public int getPay() {  return primaryPay; }
 	@Override
 	public String toString() {
-		return (type==0 ? "정규직":"비정규직")+":이름="+super.name+", 주소="+super.address+", 부서="+super.dept
-				+ ", 계약만료일="+this.expireDate+", 기본입금="+this.primaryPay;
+		return super.toString()+ ", 계약만료일="+this.expireDate+", 기본입금="+this.primaryPay;
 	}
 }
