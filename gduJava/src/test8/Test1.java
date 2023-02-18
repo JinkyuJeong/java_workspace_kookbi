@@ -123,20 +123,19 @@ class Buyer {
 		String drinkName="";
 		int cntSnack=0, priceSnack=0;
 		String snackName="";
-		for(Food f : cart) {
-			if(f instanceof Fruit) {
-				Fruit fr = (Fruit)f;
-				totPrice+=fr.price; totName+=fr+", ";
+		
+		for(int i=0 ; i<this.cnt;i++) {
+			totPrice+=cart[i].price; totName+=cart[i]+", ";
+			if(cart[i]instanceof Fruit) {
+				Fruit fr = (Fruit)cart[i];
 				cntFruit++; priceFruit+=fr.price; fruitName+=fr+", ";
 			}
-			if(f instanceof Drink) {
-				Drink d = (Drink)f;
-				totPrice+=d.price; totName+=d+", ";
+			if(cart[i] instanceof Drink) {
+				Drink d = (Drink)cart[i];
 				cntDrink++; priceDrink+=d.price; drinkName+=d+", ";
 			}
-			if(f instanceof Snack) {
-				Snack s = (Snack)f;
-				totPrice+=s.price; totName+=s+", ";
+			if(cart[i] instanceof Snack) {
+				Snack s = (Snack)cart[i];
 				cntSnack++; priceSnack+=s.price; snackName+=s+", ";
 			}
 		}
