@@ -126,7 +126,7 @@ class Buyer {
 		
 		for(int i=0 ; i<this.cnt;i++) {
 			totPrice+=cart[i].price; totName+=cart[i]+", ";
-			if(cart[i]instanceof Fruit) {
+			if(cart[i] instanceof Fruit) {
 				Fruit fr = (Fruit)cart[i];
 				cntFruit++; priceFruit+=fr.price; fruitName+=fr+", ";
 			}
