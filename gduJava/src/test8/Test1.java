@@ -88,7 +88,7 @@ public class Test1 {
 class Buyer {
 	int money =10000;
 	int point, cnt;
-	Food[] cart = new Food[6];
+	Food[] cart = new Food[30];
 	
 	public void buy(Food f) {
 		if(money < f.price) {
