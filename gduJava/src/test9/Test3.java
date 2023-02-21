@@ -11,25 +11,24 @@ interface Robot {
 	void action();
 }
 class DanceRobot implements Robot{
-	public void action() {
-		System.out.println(this+"은 춤을 춥니다.");
-	}
 	@Override
-	public String toString() {  return "DanceRobot";  }
+	public void action() {
+		System.out.println("DanceRobot은 춤을 춥니다.");
+	}
 }
 class SingRobot implements Robot{
-	public void action() {
-		System.out.println(this+"은 노래를 부릅니다.");
-	}
 	@Override
-	public String toString() {  return "SingRobot";  }
+	public void action() {
+		System.out.println("SingRobot은 노래를 부릅니다.");
+	}
+	
 }
 class DrawRobot implements Robot{
-	public void action() {
-		System.out.println(this+"은 그림을 그립니다.");
-	}
 	@Override
-	public String toString() {  return "DrawRobot";  }
+	public void action() {
+		System.out.println("DrawRobot은 그림을 그립니다.");
+	}
+	
 }
 
 public class Test3 {
