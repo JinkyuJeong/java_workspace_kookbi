@@ -15,7 +15,20 @@ import java.util.Arrays;
  
  */
 import java.util.Scanner;
-
+/*
+ * 큰 숫자 출력하기
+[결과]
+자리수를 입력하세요(1~10)
+5
+0 부터 9까지 5자리 숫자를 입력하세요
+12345
+  * *** *** * * *** 
+  *   *   * * * *   
+  * *** *** *** *** 
+  * *     *   *   * 
+  * *** ***   * *** 
+ 
+ */
 public class Test4 {
 	public static String[][][] number = { 
 			{ // 0
