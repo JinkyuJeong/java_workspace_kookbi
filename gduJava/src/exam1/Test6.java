@@ -89,7 +89,7 @@ public class Test6 {
 			System.out.println();
 		}
 		
-		System.out.println("점수\t\t국어\t\t영어\t\t수학\t\t물리\t\t화학\t\t사회\t\t컴퓨터\t최대\t\t최소\t\t평균");
+		System.out.println("점수\t\t국어\t\t영어\t\t수학\t\t물리\t\t화학\t\t사회\t\t컴퓨터\t\t최대\t\t최소\t\t평균");
 
 	}
 
