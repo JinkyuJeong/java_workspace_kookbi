@@ -7,7 +7,7 @@ public class Test3 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int random = (int)(Math.random()*100)+1;
-		int num=0, cnt=0, errCnt=0;;
+		int num=0, cnt=0;
 		while(true) {
 			System.out.print("1부터 100사이의 숫자 입력 : ");
 			try {
@@ -20,7 +20,7 @@ public class Test3 {
 						System.out.println(num+ " up");
 						cnt++;
 					}else {
-						System.out.println("정답 ["+cnt+"번만에 맞춤, 오류는"+errCnt+"번]");
+						System.out.println("정답 ["+cnt+"번만에 맞춤]");
 						break;
 					}
 				}else {
@@ -28,10 +28,10 @@ public class Test3 {
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("숫자만 입력하세요");
-				sc.nextLine(); errCnt++;
+				sc.nextLine(); cnt++;
 			} catch (Exception e) {
 				System.out.println("1과 100사이의 숫자만 입력하세요.");
-				sc.nextLine(); errCnt++;
+				sc.nextLine(); cnt++;
 			}
 		}
 		
