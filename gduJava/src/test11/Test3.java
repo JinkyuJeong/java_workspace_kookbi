@@ -18,5 +18,7 @@ public class Test3 {
 		for(int i=0 ; i < stack.length ; i++) {
 			System.out.printf("%s=>%s\n", stack[i], name[i].trim());
 		}
+		
+		// \\s = 공백
 	}
 }
