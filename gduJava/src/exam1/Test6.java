@@ -43,7 +43,6 @@ public class Test6 {
 			score[i] = sc.nextInt();
 			sum+=score[i];
 		}
-
 		int min=score[0], max=score[0];
 		for(int i=1 ;i<score.length-3;i++) {
 			if(max<score[i])
