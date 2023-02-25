@@ -34,8 +34,7 @@ public class Test5 {
 		
 		for(int i=0 ; i<a.length;i++) {
 			for(int j=0; j<a[i].length; j++) {
-				if(a[i][j] == 0 ) continue;
-				else {
+				if(a[i][j] != 0 ) {
 					b[vCheck][cCnt++] = i;
 					b[vCheck][cCnt++] = j;
 					b[vCheck][cCnt] = a[i][j];
