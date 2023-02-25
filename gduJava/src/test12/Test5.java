@@ -30,23 +30,24 @@ public class Test5 {
 		};	
 	public static void main(String[] args) {
 		int[][] b = new int[5][3];
-		int cCnt=0, vCheck=1;
+		int i=0, j=0, cCnt=0, vCheck=1;
 		
-		for(int i=0 ; i<a.length;i++) {
-			for(int j=0; j<a[i].length; j++) {
+		for(i=0 ; i<a.length;i++) {
+			for(j=0; j<a[i].length; j++) {
 				if(a[i][j] == 0 ) continue;
 				else {
 					b[vCheck][cCnt++] = i;
 					b[vCheck][cCnt++] = j;
-					b[vCheck][cCnt++] = a[i][j];
-					b[0][1]++;
+					b[vCheck][cCnt] = a[i][j];
 					vCheck++;
 					cCnt=0;
 				}
 			}
-			b[0][0]++;
-			if(i==a.length-1) b[0][2]=vCheck-1;
 		}
+		
+		b[0][0] = a.length; 
+		b[0][1] = a[0].length;
+		b[0][2]=vCheck-1;
 		
 		for(int[] arr : b) 
 			System.out.println(Arrays.toString(arr));

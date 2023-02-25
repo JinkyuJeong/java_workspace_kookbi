@@ -30,16 +30,11 @@ public class Test6 {
 	};
 	public static void main(String[] args) {
 		int[][] b = new int[a[0][0]][a[0][1]];
-		int cnt = a[0][2];
 
-		for(int i=1 ; i<a.length ; i++) {
-			for(int j=1 ; j <a[i].length ; j++) {
-				if(j==2) b[ a[i][j-2] ][ a[i][j-1] ] = a[i][j]; 
-		}
-
+		for(int i=1 ; i<a.length ; i++) 
+			b[ a[i][0] ][ a[i][1] ] =  a[i][2];
+		
 		for(int[] arr : b) 
 			System.out.println(Arrays.toString(arr));
-
 	}
-
 }
