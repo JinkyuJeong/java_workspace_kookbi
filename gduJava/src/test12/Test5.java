@@ -30,10 +30,10 @@ public class Test5 {
 		};	
 	public static void main(String[] args) {
 		int[][] b = new int[5][3];
-		int i=0, j=0, cCnt=0, vCheck=1;
+		int cCnt=0, vCheck=1;
 		
-		for(i=0 ; i<a.length;i++) {
-			for(j=0; j<a[i].length; j++) {
+		for(int i=0 ; i<a.length;i++) {
+			for(int j=0; j<a[i].length; j++) {
 				if(a[i][j] == 0 ) continue;
 				else {
 					b[vCheck][cCnt++] = i;
