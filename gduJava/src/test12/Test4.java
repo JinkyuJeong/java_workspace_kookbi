@@ -26,7 +26,7 @@ public class Test4 {
 	}
 	
 	static String fillZero(String src, int length) {
-		if(src == null) return "null";
+		if(src == null) return null;
 		StringBuffer sb = new StringBuffer(src);
 		if(src.length()<length) {
 			for(int i=0; i<length-src.length();i++) {
