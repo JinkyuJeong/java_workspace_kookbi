@@ -48,7 +48,7 @@ public class Test4 {
 		while(num>0) {
 			if(num%3==0) {
 				sb.insert(0, 4);
-				num/=3.00000001;
+				num= (int)(num/3.00000001);
 				continue;
 			}
 			switch(num%3) {
