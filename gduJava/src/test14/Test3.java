@@ -63,12 +63,12 @@ public class Test3 {
 		System.out.println("*** 복권 추첨 결과 ***");
 		System.out.println("1등 : " + list1.get(0));
 		System.out.print("2등 : ");
-		for(int num : list2)
-			System.out.print(num + ", ");
+		for(i=list2.size()-1 ; i>=0; i--)
+			System.out.print(list2.get(i) + ", ");
 		System.out.print("\n3등 : ");
-		for(int num : list3)
-			System.out.print(num + ", ");
-		System.out.println("\n===========");
+		for(i=list3.size()-1 ; i>=0; i--)
+			System.out.print(list3.get(i) + ", ");
+		System.out.println("\n====================");
 		System.out.println("1등 : " +list1);
 		System.out.println("2등 : " +list2);
 		System.out.println("3등 : " +list3);
