@@ -1,17 +1,16 @@
 package test14;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-/* 완료
+/* 
 숫자 야구
 문제 설명
 숫자 야구 게임이란 2명이 서로가 생각한 숫자를 맞추는 게임입니다. 게임해보기
-각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다. 그리고 그 결과를 토대로 상대가 정한 숫자를 예상한 뒤 맞힙니다.
-* 숫자는 맞지만, 위치가 틀렸을 때는 볼
-* 숫자와 위치가 모두 맞을 때는 스트라이크
-* 숫자와 위치가 모두 틀렸을 때는 아웃
+각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다. 
+그리고 그 결과를 토대로 상대가 정한 숫자를 예상한 뒤 맞힙니다.
+ * 숫자는 맞지만, 위치가 틀렸을 때는 볼
+ * 숫자와 위치가 모두 맞을 때는 스트라이크
+ * 숫자와 위치가 모두 틀렸을 때는 아웃
 예를 들어, 아래의 경우가 있으면
 A : 123
 B : 1스트라이크 1볼.
@@ -36,10 +35,50 @@ baseball	return
 public class Test4 {
 	public static void main(String[] args) {
 		System.out.println ("=>"+solution(new int[][] { 
-	          { 123, 1, 1 }, 
-	          { 356, 1, 0 }, 
-	          { 327, 2, 0 }, 
-	          { 489, 0, 1 } }));
+			{ 123, 1, 1 }, 
+			{ 356, 1, 0 }, 
+			{ 327, 2, 0 }, 
+			{ 489, 0, 1 } }));
 	}
+
+
+	static int solution(int[][] b) {
+		String num;
+		int sCnt=0, bCnt=0, pass=0, ansCnt=0;
+		char[][] bArr = new char[b.length][];
+		for(int i=0; i<b.length ; i++) {
+			bArr[i] = (b[i][0]+"").toCharArray();
+		}
+
+		for(int i=123; i<=987; i++) {
+			num = i+"";
+			if(num.charAt(1) == '0' || num.charAt(2) == '0') continue;
+			if(num.charAt(0) == num.charAt(1) || num.charAt(0) == num.charAt(2) 
+					||	num.charAt(1) == num.charAt(2)) continue;
+
+			for(int j=0; j<b.length; j++) {
+				for(int k=0; k<3; k++) {
+					for(int m=0; m<3; m++) {
+						if(k==m && bArr[j][k] == num.charAt(m)) sCnt++; 
+						else if(k!=m && bArr[j][k] == num.charAt(m)) bCnt++; 
+					}
+				}
+
+				if(sCnt==b[j][1] && bCnt==b[j][2]) pass++;
+				
+				sCnt=0; bCnt=0;
+			}
+
+			if(pass == b.length) {
+				ansCnt++;
+				System.out.println("가능한 답" + ansCnt + " : " + i);
+			}
+
+			pass=0;
+		}
+
+		return ansCnt;
+	}
+
 
 }
