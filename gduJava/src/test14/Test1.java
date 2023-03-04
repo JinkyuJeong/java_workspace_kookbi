@@ -12,7 +12,7 @@ import java.util.List;
          int compareTo() : 이름의 오름차순으로 정렬되도록 구현
 2. 구동 클래스 완성하기
     다음 결과가 나오도록 구동 클래스 구현하기    
-        
+ 
 [결과]
 기본정렬방식
 김삿갓:국어(95),영어(85),수학(75),총점(255),평균(85.00)
@@ -79,6 +79,10 @@ class Student implements Comparable<Student>{
 		this.eng = eng;
 		this.math = math;
 	}
+	
+	private int getTotal() {
+		return kor+eng+math;
+	}
 	@Override
 	public int compareTo(Student s) {
 		return this.name.compareTo(s.name);
@@ -86,7 +90,7 @@ class Student implements Comparable<Student>{
 	@Override
 	public String toString() {
 		return String.format("%s:국어(%d), 영어(%d), 수학(%d), 총점(%d), 평균(%.2f)", 
-						name, kor, eng, math, (kor+eng+math), (kor+eng+math)/(double)3) ;
+						name, kor, eng, math, this.getTotal(), this.getTotal()/(double)3) ;
 	}
 	
 }

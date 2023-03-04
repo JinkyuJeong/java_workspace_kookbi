@@ -1,4 +1,7 @@
 package test14;
+
+import java.util.Arrays;
+
 /*
 영일이는 생명과학에 관심이 생겨 왕개미를 연구하고 있었다.
 
@@ -49,17 +52,40 @@ package test14;
 */
 public class Test6 {
 	public static void main(String[] args) {
-		System.out.println ("=>"+solution(new int[][] { 
+		int[][] map =solution(new int[][] { 
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
 			{ 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },  
 			{ 1, 0, 0, 1, 1, 1, 0, 0, 0, 1 },
 			{ 1, 0, 0, 0, 0, 0, 0, 1, 0, 1 }, 
 			{ 1, 0, 0, 0, 0, 0, 0, 1, 0, 1 }, 
 			{ 1, 0, 0, 0, 0, 1, 0, 1, 0, 1 },
-			{ 1, 0, 0, 0, 0, 1, 2, 1, 0, 1 },
+			{ 1, 0, 0, 0, 0, 1, 0, 1, 0, 1 },
 			{ 1, 0, 0, 0, 0, 1, 0, 0, 0, 1 }, 
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }	}));
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 2, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }	});
+		for(int [] arr : map)
+			System.out.println(Arrays.toString(arr));
 	}
-
+	
+	static int[][] solution(int[][] map) {
+		int point=1;
+		for(int i=1; i<map.length ; i++) {
+			for(int j=1 ; j<map[i].length ; j++) {
+				if(j == 1) j=point;
+				if(map[i][j] == 0)
+					map[i][j]=9;
+				else if (map[i][j]==1 ) {
+					point =j-1;
+					break;
+				}
+				else {
+					map[i][j]=9;
+					return map;
+				}
+			}
+		}
+		return map;
+	}
+	
+	
 }
