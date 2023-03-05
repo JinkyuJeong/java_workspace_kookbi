@@ -1,4 +1,10 @@
 package test14;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
 /*
  * 숫자 맞추기 게임
  * 시스템이 4자리의 서로 다른 수를 저장한 후 사용자가 저장된 수를 맞추는 게임
@@ -13,10 +19,46 @@ package test14;
  *  5. 정답인 된경우 몇번만에 정답을 맞췄는지 입력 갯수를 화면에 출력하기
  */
 public class Test5 {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Set<Integer> set = new HashSet<>();
+		while(set.size()!=4) {
+			set.add((int)(Math.random()*9));
+		}
+		ArrayList<Integer> sysNum = new ArrayList<>(set);
+		set.clear();
+		System.out.println("[확인용] 시스템 숫자 : "+sysNum);
+		
+		ArrayList<Integer> userNum = null;
+		Scanner sc = new Scanner(System.in);
+		int ball=0, strike=0, cnt=0;
+		while(strike != 4) {
+			ball=0; strike=0;
+			System.out.print("4자리 정수를 입력하세요 : ");
+			int num = sc.nextInt();
+			for(int i=0; i<4; i++) {
+				set.add(num%10);
+				num/=10;
+			}
+			if(set.size()!=4) {
+				System.out.println("[경고] 입력 숫자에 중복값이 있습니다.");
+				continue;
+			}else userNum = new ArrayList<>(set);
+			
+			for(int i=0; i<4; i++) {
+				for(int j=0; j<4; j++) {
+					if(sysNum.get(i)==userNum.get(j)) {
+						if(i==j) strike++;
+						else ball++;
+					}
+				}
+			}
+			
+			System.out.println(strike+"스트라이크"+ball+"볼");
+			userNum.clear(); set.clear();
+			cnt++;
+		}
+		
+		System.out.println("\n[결과] "+cnt+"번 만에 맞춤");
 	}
 
 }
