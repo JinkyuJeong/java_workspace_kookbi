@@ -34,14 +34,12 @@ public class Test2 {
 			map.put(p, p.getScore());
 		}
 		System.out.println(map);
-		int[] rank = new int[h];
 		int idx=0, cnt=1;
 		Set<Player> set = map.keySet();
 		for(Player p1 : set) {
 			for(Player p2: set) {
 				if(p1.getScore()<p2.getScore()) cnt++;
 			}
-			rank[idx++] = cnt;
 			System.out.println(cnt+"등 : " + p1);
 			cnt=1;
 		}
