@@ -34,9 +34,8 @@ public class Test2 {
 		for(i=1; i<=h ; i++) {
 			list.add(new Player(i+"번", deck.pick(0), deck.pick(0)));
 		}
-		System.out.println(list);
+		
 		list.sort((p1,p2) -> p2.getScore() - p1.getScore());
-		System.out.println(list);
 
 		for(i=0; i<h-1; i++) {
 			for(int j=i; j<h-1; j++) {
