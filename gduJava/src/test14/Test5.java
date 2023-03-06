@@ -1,7 +1,10 @@
 package test14;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -20,7 +23,7 @@ import java.util.Set;
  */
 public class Test5 {
 	public static void main(String[] args) {
-		Set<Integer> set = new HashSet<>();
+		Set<Integer> set = new LinkedHashSet<>();
 		while(set.size()!=4) {
 			set.add((int)(Math.random()*9));
 		}
@@ -28,7 +31,7 @@ public class Test5 {
 		set.clear();
 		System.out.println("[확인용] 시스템 숫자 : "+sysNum);
 		
-		ArrayList<Integer> userNum = new ArrayList<>();
+		ArrayList<Integer> userNum = null;
 		Scanner sc = new Scanner(System.in);
 		int ball=0, strike=0, cnt=0;
 		while(strike != 4) {
@@ -36,11 +39,18 @@ public class Test5 {
 			System.out.print("4자리 정수를 입력하세요 : ");
 			int num = sc.nextInt();
 			for(int i=0; i<4; i++) {
-				userNum.add(0,num%10);
+				set.add(num%10);
 				num/=10;
 			}
-		
-			System.out.println(userNum);
+			
+			if(set.size() !=4) {
+				System.out.println("[경고] 입력숫자에 중복이 있습니다. 다시 입력하세요");
+				cnt++; set.clear();
+				continue;
+			}else userNum = new ArrayList<>(set);
+			
+			Collections.reverse(userNum);
+			
 			for(int i=0; i<4; i++) {
 				for(int j=0; j<4; j++) {
 					if(sysNum.get(i)==userNum.get(j)) {
