@@ -28,7 +28,7 @@ public class Test5 {
 		set.clear();
 		System.out.println("[확인용] 시스템 숫자 : "+sysNum);
 		
-		ArrayList<Integer> userNum = null;
+		ArrayList<Integer> userNum = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
 		int ball=0, strike=0, cnt=0;
 		while(strike != 4) {
@@ -36,14 +36,11 @@ public class Test5 {
 			System.out.print("4자리 정수를 입력하세요 : ");
 			int num = sc.nextInt();
 			for(int i=0; i<4; i++) {
-				set.add(num%10);
+				userNum.add(0,num%10);
 				num/=10;
 			}
-			if(set.size()!=4) {
-				System.out.println("[경고] 입력 숫자에 중복값이 있습니다.");
-				continue;
-			}else userNum = new ArrayList<>(set);
-			
+		
+			System.out.println(userNum);
 			for(int i=0; i<4; i++) {
 				for(int j=0; j<4; j++) {
 					if(sysNum.get(i)==userNum.get(j)) {
