@@ -28,20 +28,20 @@ nums	result
 [4,6,7]을 이용해서 17을 만들 수 있습니다. */
 public class Test3 {
 	private static List<ArrayList<Integer>> comList = new ArrayList<ArrayList<Integer>>();
-	private static void combine(int[] nums, boolean[] visit, int start, int r ){
+	private static void combine(int[] nums, boolean[] checked, int start, int r ){
 		if(r==0) {
 			ArrayList<Integer> list = new ArrayList<>();
 			for(int i=0; i<nums.length; i++) {
-				if(visit[i]) list.add(nums[i]);
+				if(checked[i]) list.add(nums[i]);
 			}
 			comList.add(list);
 			return;
 		}
 		
 		for(int i=start ; i<nums.length; i++) {
-			visit[i]=true;
-			combine(nums, visit, i+1, r-1);
-			visit[i]=false;
+			checked[i]=true;
+			combine(nums, checked, i+1, r-1);
+			checked[i]=false;
 		}
 		
 	}
@@ -49,9 +49,9 @@ public class Test3 {
     static int solution(int[] nums) {
         int answer = 0;
         int start=0, r=3;
-        boolean[] visit = new boolean[nums.length];
+        boolean[] checked = new boolean[nums.length];
         Arrays.sort(nums);
-        combine(nums, visit, start, r);
+        combine(nums, checked, start, r);
         
 //        for(ArrayList<Integer> arr : comList) {
 //        	System.out.println(arr);
