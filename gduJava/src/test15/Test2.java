@@ -33,9 +33,9 @@ public class Test2 {
 			Player p = new Player(i+"번", deck.pick(0), deck.pick(0));
 			map.put(p, p.getScore());
 		}
-		System.out.println(map);
-		int idx=0, cnt=1;
+		
 		Set<Player> set = map.keySet();
+		int cnt=1;
 		for(Player p1 : set) {
 			for(Player p2: set) {
 				if(p1.getScore()<p2.getScore()) cnt++;
