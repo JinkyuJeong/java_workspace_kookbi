@@ -7,7 +7,7 @@ import java.util.Stack;
 public class Test9 {
 
 	public static void main(String[] args) {
-		solution("(((( )))");
+		solution("((고현빈고현))");
 	}
 	
 	static void solution(String s) {
