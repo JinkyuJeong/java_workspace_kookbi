@@ -24,7 +24,7 @@ import java.util.TreeMap;
 public class Test2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Map<Player, Integer> map = new TreeMap<>((p1,p2) -> p1.getScore() < p2.getScore()? 1:  p1.getScore() == p2.getScore()? 1:-1);
+		Map<Player, Integer> map = new TreeMap<>((p1,p2) -> p2.getScore() >= p1.getScore()? 1: -1 );
 		CardDeck deck = new CardDeck();
 		deck.shuffle();
 		System.out.println("게임 할 인원수를 입력하세요(최대:10)");
