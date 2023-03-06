@@ -27,7 +27,8 @@ nums	result
 [2,4,7]을 이용해서 13을 만들 수 있습니다.
 [4,6,7]을 이용해서 17을 만들 수 있습니다. */
 public class Test3 {
-	private static List<ArrayList<Integer>> comList = new ArrayList<ArrayList<Integer>>();
+	private static List<ArrayList<Integer>> comList = new ArrayList<>();
+	
 	private static void combine(int[] nums, boolean[] checked, int start, int r ){
 		if(r==0) {
 			ArrayList<Integer> list = new ArrayList<>();
@@ -53,21 +54,16 @@ public class Test3 {
         Arrays.sort(nums);
         combine(nums, checked, start, r);
         
-//        for(ArrayList<Integer> arr : comList) {
-//        	System.out.println(arr);
-//        }
-        
         List<Integer> arr = null;
         for(int i=0; i<comList.size() ; i++) {
         	arr = comList.get(i);
-        	int sum=0;
-        	int cnt = 0;
+        	int sum=0, cnt = 0;
+        	
         	for(int a : arr) sum+=a;
         	for(int j=1 ; j<=sum ; j++) {
-        		if(sum%j==0) {
-        			cnt++;
-        		}
+        		if(sum%j==0) cnt++;
         	}
+        	
         	if(cnt==2) {
         		System.out.println(arr+"를(을) 이용해서 "+sum+"을 만들 수 있습니다.");
         		answer++;
