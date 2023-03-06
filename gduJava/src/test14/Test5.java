@@ -1,7 +1,10 @@
 package test14;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -20,7 +23,7 @@ import java.util.Set;
  */
 public class Test5 {
 	public static void main(String[] args) {
-		Set<Integer> set = new HashSet<>();
+		Set<Integer> set = new LinkedHashSet<>();
 		while(set.size()!=4) {
 			set.add((int)(Math.random()*9));
 		}
@@ -39,10 +42,14 @@ public class Test5 {
 				set.add(num%10);
 				num/=10;
 			}
-			if(set.size()!=4) {
-				System.out.println("[경고] 입력 숫자에 중복값이 있습니다.");
+			
+			if(set.size() !=4) {
+				System.out.println("[경고] 입력숫자에 중복이 있습니다. 다시 입력하세요");
+				cnt++; set.clear();
 				continue;
 			}else userNum = new ArrayList<>(set);
+			
+			Collections.reverse(userNum);
 			
 			for(int i=0; i<4; i++) {
 				for(int j=0; j<4; j++) {

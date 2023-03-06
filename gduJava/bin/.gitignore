@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 /Main.class
 /chap1/
 /chap10/
+=======
+>>>>>>> 88da446c67c81069ddcc2fd5ff1abb3d5a227c19
 /chap11/
 /chap12/
 /chap2/
@@ -28,3 +31,7 @@
 /test7/
 /test8/
 /test9/
+<<<<<<< HEAD
+=======
+/test15/
+>>>>>>> 88da446c67c81069ddcc2fd5ff1abb3d5a227c19
