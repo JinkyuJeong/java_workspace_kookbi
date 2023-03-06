@@ -24,14 +24,6 @@ nums	result
 public class Test3 {
     static int solution(int[] nums) {
         int answer = 0;
-        int sum=0;
-        int interval = nums.length-3;
-        for(int i=0; i<=nums.length-3 ; i++) {
-        	for(int j=0; j<3;j++) {
-        		for(int k=0; k<=interval; k++)
-        		sum+=nums[i+j];
-        	}
-        }
         
         return answer;
    }

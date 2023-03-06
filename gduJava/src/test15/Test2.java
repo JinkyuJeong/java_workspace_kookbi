@@ -24,38 +24,35 @@ import java.util.TreeMap;
  */
 public class Test2 {
 	public static void main(String[] args) {
-		int cnt=0, i=0;
 		Scanner sc = new Scanner(System.in);
-		List<Player> list = new ArrayList<>();
+		Map<Player, Integer> map = new TreeMap<>((p1,p2) -> p1.getScore() < p2.getScore()? 1:  p1.getScore() == p2.getScore()? 1:-1);
 		CardDeck deck = new CardDeck();
 		deck.shuffle();
 		System.out.println("게임 할 인원수를 입력하세요(최대:10)");
 		int h = sc.nextInt();
-		for(i=1; i<=h ; i++) {
-			list.add(new Player(i+"번", deck.pick(0), deck.pick(0)));
+		for(int i=1; i<=h ; i++) {
+			Player p = new Player(i+"번", deck.pick(0), deck.pick(0));
+			map.put(p, p.getScore());
 		}
-		
-		list.sort((p1,p2) -> p2.getScore() - p1.getScore());
-
-		for(i=0; i<h-1; i++) {
-			for(int j=i; j<h-1; j++) {
-				if(list.get(i).getScore() == list.get(j+1).getScore()) {
-					System.out.println(i+1 + "등 : " + list.get(j+1));
-					cnt++;
-				}
+		System.out.println(map);
+		int[] rank = new int[h];
+		int idx=0, cnt=1;
+		Set<Player> set = map.keySet();
+		for(Player p1 : set) {
+			for(Player p2: set) {
+				if(p1.getScore()<p2.getScore()) cnt++;
 			}
-			System.out.println(i+1 + "등 : " + list.get(i));
-			i+=cnt;
-			cnt=0;
+			rank[idx++] = cnt;
+			System.out.println(cnt+"등 : " + p1);
+			cnt=1;
 		}
-		if(i == 4) System.out.println(i+1 + "등 : " + list.get(i));
 	}
 }
 
 class EastCard {
 	int num;
 	boolean isKwang;
-	
+
 	public EastCard() {
 		this.num=1;
 		this.isKwang=true;
@@ -73,7 +70,7 @@ class EastCard {
 class CardDeck{
 	List<EastCard> cards;
 	static Map<String,Integer> jokbo;
-	
+
 	static {
 		jokbo = new HashMap<>();
 		jokbo.put("KK", 4000);
@@ -87,7 +84,7 @@ class CardDeck{
 		jokbo.put("410", 2020); jokbo.put("104", 2020);
 		jokbo.put("46", 2010); jokbo.put("64", 2010);
 	}
-	
+
 	public CardDeck() {
 		cards = new ArrayList<>();
 		for(int i=0; i<20; i++) {
@@ -95,15 +92,15 @@ class CardDeck{
 		}
 		System.out.println(cards);
 	}
-	
+
 	EastCard pick(int idx) { return cards.remove(idx); }
 	EastCard pick() { return cards.remove((int)(Math.random()*cards.size())); }
-	
+
 	void shuffle() {
 		Collections.shuffle(cards);
 		System.out.println(cards);
 	}
-	
+
 }
 
 class Player  {
@@ -114,7 +111,7 @@ class Player  {
 		this.c1 = c1;
 		this.c2 = c2;
 	}
-	
+
 	int getScore() {
 		if(c1.isKwang && c2.isKwang) return CardDeck.jokbo.get("KK");
 		else {
@@ -128,5 +125,5 @@ class Player  {
 	public String toString() {
 		return String.format("%s(%s, %s) : %d", this.name, c1, c2, this.getScore());
 	}
-	
+
 }
