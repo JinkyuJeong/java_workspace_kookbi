@@ -25,19 +25,21 @@ public class Test1 {
 	public static void main(String[] args) {
 		Set<Integer> set1 = new TreeSet<>();
 		Set<Integer> set2 = new TreeSet<>(Comparator.reverseOrder());
-		
+
 		Scanner sc = new Scanner(System.in);
+		int num;
 		System.out.print("1부터 99까지의 숫자를 입력하세요 (종료 : 0) : ");
 		while(true) {
 			try {
-				int num = sc.nextInt();
-				if(num==0) break;
-				if(num>=1 && num<=99) {
-					set1.add(num);
-					set2.add(num);
-				}
+				num = sc.nextInt();
 			} catch (Exception e) {
 				sc.next();
+				continue;
+			}
+			if(num==0) break;
+			if(num>=1 && num<=99) {
+				set1.add(num);
+				set2.add(num);
 			}
 		}
 		System.out.println("set1 : " + set1);
