@@ -28,7 +28,7 @@ public class Test2 {
 		System.out.print("나이순:");
 		System.out.println(s2);
 		
-		TreeSet<Person> s3 = new TreeSet<Person>((p1,p2)->p2.compareTo(p1));
+		TreeSet<Person> s3 = new TreeSet<Person>((p1,p2)->p2.name.compareTo(p1.name));
 		for (Person p : arr) s3.add(p);
 		System.out.print("이름 역순:");
 		System.out.println(s3);
