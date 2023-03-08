@@ -43,7 +43,6 @@ public class Test5 {
 	
 	static String[] solution(String[] s,int n) {
 		Arrays.sort(s, new Comparator<String>() {
-			@Override
 			public int compare(String s1, String s2) {
 				if((s1.charAt(n)+"").equals(s2.charAt(n)+"")) return s1.compareTo(s2);
 				else return (s1.charAt(n)+"").compareTo(s2.charAt(n)+"");
