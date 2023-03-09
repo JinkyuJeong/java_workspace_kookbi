@@ -86,6 +86,7 @@ public class Test5 {
 				answer[idx++] = i;
 			}
 		}
+
 		return answer;
 	}
 
