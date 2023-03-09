@@ -2,8 +2,10 @@ package test16;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /*
@@ -62,31 +64,43 @@ public class Test5 {
 					fail[i-1]++;
 				}
 			}
-
-			List<Integer> list = new ArrayList<>();
-			list.add(i);
-			map.put((double)fail[i-1]/human, list);
+			if(human==0 && fail[i-1]==0) {
+				List<Integer> list = new ArrayList<>();
+				list.add(i);
+				map.put(0.0, list);
+			}else {
+				if(map.get((double)fail[i-1]/human) != null) {
+					map.get((double)fail[i-1]/human).add(i);
+				}else {
+					List<Integer> list = new ArrayList<>();
+					list.add(i);
+					map.put((double)fail[i-1]/human, list);
+				}
+			}
 			human -= fail[i-1];
 		}
-
-		System.out.println(map);
-		System.out.println(Arrays.toString(fail));
-
+		
+		int idx=0;
+		for(Collection<Integer> li : map.values()) {
+			for(Integer i : li) {
+				answer[idx++] = i;
+			}
+		}
 		return answer;
 	}
 
 	public static void main(String[] args) {
-//		for(int i : solution(5, new int[] {2,1,2,6,6,4,3,3})) 
-//			System.out.print(i + ",");  //3,4,2,1,5,
-//				System.out.println();
-				for(int i : solution(4, new int[] {4,4,4,4,4})) 
-				    System.out.print(i + ",");  //4,1,2,3,
-//				System.out.println();
-//				for(int i : solution(2, new int[] {3,3})) 
-//				    System.out.print(i + ",");  //1,2,
-//				System.out.println();
-//				for(int i : solution(2, new int[] {1,1})) 
-//				    System.out.print(i + ",");  //1,2,
-//				System.out.println();
+		for(int i : solution(5, new int[] {2,1,2,6,2,4,3,3})) 
+			System.out.print(i + ",");  //3,4,2,1,5,
+		System.out.println();
+		for(int i : solution(4, new int[] {4,4,4,4,4})) 
+			System.out.print(i + ",");  //4,1,2,3,
+		System.out.println();
+		for(int i : solution(2, new int[] {3,3})) 
+			System.out.print(i + ",");  //1,2,
+		System.out.println();
+		for(int i : solution(2, new int[] {1,1})) 
+			System.out.print(i + ",");  //1,2,
+		System.out.println();
 	}
 }
