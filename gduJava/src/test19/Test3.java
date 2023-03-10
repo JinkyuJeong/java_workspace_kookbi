@@ -58,7 +58,7 @@ public class Test3 {
 			return new Car(Integer.parseInt(str[0]), Integer.parseInt(str[1]), 
 					str[2], Integer.parseInt(str[3]), temp);
 		};
-		int count = (int)br.lines().map(f).filter(c->c.getMonth()==6)
+		int count = (int)br.lines().map(f).filter(c->c.getMonth()==6 && c.getCar().equals("그랜저"))
 			.peek(s->System.out.println(s))
 			.count();
 		System.out.println("합계 : " + count);
