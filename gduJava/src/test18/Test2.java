@@ -17,8 +17,8 @@ public class Test2 {
 		File f = new File("src/chap14");
 		String[] files = f.list();
 		for(String s: files) {
-			if(s.indexOf("InputStream") != -1) {
-				File f2 = new File(s);
+			File f2 = new File(f,s);
+			if(s.indexOf("InputStream") != -1 && s.endsWith(".java") && f2.isFile()) {
 				FileReader fr = new FileReader("src/chap14/"+f2);
 				FileWriter fw = new FileWriter("InputStream예제.txt", true);
 				fw.write("\n\n************"+ s +"*************\n\n");
