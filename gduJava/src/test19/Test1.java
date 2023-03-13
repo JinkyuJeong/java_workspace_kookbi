@@ -19,6 +19,7 @@ public class Test1 {
 				}
 				return cnt==2;
 			})
+			.distinct()
 			.peek(n->System.out.print(n+", "))
 			.count();
 		System.out.println("\n소수의 총 갯수 : " + count);
