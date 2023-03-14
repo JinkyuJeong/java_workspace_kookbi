@@ -11,7 +11,7 @@ public class GeneratorProductFile {
 		String[] cars = {"아반테", "그랜저", "SM7", "BMW", "벤츠", "K9"};
 		String[] remarks = {"몰라요", "싫어요", "그냥그래요", "좋아요"};
 		int limit=0, con=0;
-		while(limit++<1000) {
+		while(limit++<100) {
 			ps.print((int)(Math.random()*12)+1+", ");
 			con=(int)(Math.random()*3)+1;
 			ps.print(con + ", ");

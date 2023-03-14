@@ -21,11 +21,12 @@ public class Exam2 {
 			System.out.println("[연결] MariaDB 연결 완료");
 			
 			while(true) {
-				System.out.println("메뉴를 선택하세요");
+				System.out.println("메뉴를 선택하세요(종료 : 9)");
 				System.out.println("1 : 테이블 생성");
 				System.out.println("2 : 테이블에 id, pass 내용 등록");
 				System.out.println("3 : 테이블 내용 조회");
-				System.out.println("4 : 테이블 제거");
+				System.out.println("4 : 테이블 내용 삭제");
+				System.out.println("5 : 테이블 제거");
 				int menu = sc.nextInt();
 				if(menu == 9 ) break;
 
@@ -38,7 +39,10 @@ public class Exam2 {
 					String pass = sc.next();
 					insert(id,pass); break;
 				case 3: select(); break;
-				case 4: drop(); break;
+				case 4: 
+					System.out.print("id를 입력하세요 : ");
+					delete(sc.next()); break;
+				case 5: drop(); break;
 				}
 			}
 		} catch (ClassNotFoundException e) {
@@ -101,6 +105,19 @@ public class Exam2 {
 			rs.close();
 			pstmt.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	private static void delete(String id) {
+		try {
+			String sql = "delete from member where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			int result = pstmt.executeUpdate();
+			System.out.println(result+"행 삭제 완료");
+			pstmt.close();
+		}catch (SQLException e) {
 			e.printStackTrace();
 		} 
 	}

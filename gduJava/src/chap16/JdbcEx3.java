@@ -47,6 +47,12 @@ public class JdbcEx3 {
 			result = pstmt.executeUpdate();
 			System.out.println("결과 : " + result+"행 수정완료");
 			
+			sql = "delete from jdbctemp where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "lee");
+			result = pstmt.executeUpdate();
+			System.out.println("결과 : " + result+"행 삭제완료");
+			
 			sql = "select * from jdbctemp";
 			pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
